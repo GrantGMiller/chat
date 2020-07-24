@@ -1,0 +1,30 @@
+
+            {% extends "main_no_nav.html" %}
+            {% block content %}
+            <div class="container">
+
+                <form class="form-signin" method="post">
+                    <h2 class="form-signin-heading">Forgot Password:</h2>
+                    <br>
+                    <b><i>Enter your new password twice below.</b></i>
+                    <br>
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input name="passwordConfirm" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Send Forgot Email</button>
+
+                    {{messages}}
+
+                </form>
+
+                <a href="/">Cancel</a><br>
+                <a href="/login">Sign In</a>
+            </div> <!-- /container -->
+            {% endblock %}
+        

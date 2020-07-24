@@ -1,0 +1,69 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div>
+    <br>
+    <br>
+    <br>
+</div>
+<div class="container" id="channel">
+    <div id="messages">
+        {% for msg in messages %}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {{ msg['userID'] }}
+                </div>
+                <div class="col">
+                    {{ msg['timestamp'] }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{ msg['text'] }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="containter">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+</div>
+
+<div class="navbar fixed-bottom navbar-dark bg-dark w-auto" id="input">
+    <p class="navbar-brand">My User ID: <input
+            id="userID"
+            value="{{ user['userID'] }}"
+            onchange="UpdateUserID(this);">
+    </p>
+    <div class="row w-100">
+
+        <div class="col-10 w-90">
+            <input
+                    class="form-control "
+                    type="search"
+                    placeholder="..."
+                    aria-label="Search"
+                    id="userMessage"
+            >
+        </div>
+
+        <div class="col-1">
+            <button
+                    class="btn btn-info"
+                    onclick="SubmitMessage($('#userMessage')); "
+            >Send
+            </button>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
